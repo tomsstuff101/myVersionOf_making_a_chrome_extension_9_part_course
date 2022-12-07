@@ -1,0 +1,20 @@
+{
+  "name": "My second basic chrome extension",
+  "description": "a basic extension",
+  "version": "0.0.1",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["storage", "activeTab", "contextMenus", "bookmarks"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["file:///*"],
+      "js": ["content.js"]
+    }
+  ],
+  "options_page": "options/options.html"
+}
